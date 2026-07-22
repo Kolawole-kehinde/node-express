@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.ts"
+    "start": "node dist/server.ts",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "migrate": "tsx src/scripts/migrate.ts",
+    "worker": "tsx src/workers/deleteCloudinaryImage.worker.ts"
   },
   "keywords": [],
   "author": "",

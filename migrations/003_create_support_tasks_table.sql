@@ -6,4 +6,4 @@
       CHECK (status IN ('OPEN', 'IN_PROGRESS', 'RESOLVED')),
     created_at TIMESTAMPS NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMPS NOT NULL DEFAULT NOW()
- )
+ );

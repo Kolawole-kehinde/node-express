@@ -8,4 +8,4 @@ CREATE TABLE users (
     created_at TIMESTAMPS NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMPS NOT NULL DEFAULT NOW()
 
-)
+);
