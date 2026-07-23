@@ -8,12 +8,14 @@ export function errorHandler(
   res: Response,
   _next: NextFunction
 ): void {
-  if(err instanceof AppErrors){
-     res.status(err.statusCode).json({
+  if (err instanceof AppErrors) {
+    res.status(err.statusCode).json({
       success: false,
-      message: "err.message"
-     });
+      message: err.message,
+    });
+    return;
   }
+
   logger.error({ err }, "Unhandled error");
 
   res.status(500).json({
