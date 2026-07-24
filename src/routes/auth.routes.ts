@@ -1,5 +1,7 @@
 import { Router } from "express";
 import { loginUser, registerUser } from "../sevices/auth.services.js";
+import { authenticate } from "../middlewares/auth.middleware.js";
+
 
 
 export const authRouter = Router();
@@ -37,3 +39,17 @@ authRouter.post("/login", async (req, res, next) =>{
     }
 
 })
+
+
+// get current user user info
+//protect your route
+
+authRouter.get("/me", authenticate, (req, res) => {
+   res.status(200).json({
+      success: true,
+      data: {
+         user: req.user,
+      }
+   })
+  
+});
